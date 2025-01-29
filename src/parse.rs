@@ -76,7 +76,9 @@ impl Tokens {
         let lines_sequences = string
             .lines()
             .enumerate()
-            .map(|(line_num, line)| (line_num + 1, line.split_whitespace().collect::<Vec<_>>()))
+            .map(|(line_num, line)|
+                (line_num + 1, line.split(|c: char| c.is_whitespace() | (c == ',')).collect::<Vec<_>>())
+            )
             .collect::<Vec<_>>();
 
         let mut lexemes = Vec::new();
