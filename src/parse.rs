@@ -23,7 +23,7 @@ impl FromStr for Operation {
         match s.chars().next() {
             Some('+') => Ok(Operation::Add),
             Some('-') => Ok(Operation::Subtract),
-            Some('*') => Ok(Operation::Multiply),
+            Some('*'|'x') => Ok(Operation::Multiply),
             Some('/') => Ok(Operation::Divide),
 
             _ => Err(ParseOperationError {
