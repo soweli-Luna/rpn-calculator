@@ -9,16 +9,7 @@ pub enum Operation {
     Multiply,
     Divide,
 }
-impl Operation {
-    pub fn solve(&self, lhs: f64, rhs: f64) -> f64 {
-        match self {
-            Operation::Add => lhs + rhs,
-            Operation::Subtract => lhs - rhs,
-            Operation::Multiply => lhs * rhs,
-            Operation::Divide => lhs / rhs,
-        }
-    }
-}
+
 impl FromStr for Operation {
     type Err = error::ParseOperationError;
 

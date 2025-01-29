@@ -40,3 +40,14 @@ impl std::fmt::Display for SolverError {
         }
     }
 }
+
+impl parse::Operation {
+    pub fn solve(&self, lhs: f64, rhs: f64) -> f64 {
+        match self {
+            parse::Operation::Add => lhs + rhs,
+            parse::Operation::Subtract => lhs - rhs,
+            parse::Operation::Multiply => lhs * rhs,
+            parse::Operation::Divide => lhs / rhs,
+        }
+    }
+}
